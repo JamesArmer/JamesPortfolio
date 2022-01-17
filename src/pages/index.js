@@ -1,10 +1,15 @@
 import React from "react";
+import "../styles/styles.scss";
 
-import "../styles/styles.scss"
+import Header from "../components/header";
 
 // markup
 const IndexPage = () => {
-  return <p>Home</p>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 };
 
 export default IndexPage;

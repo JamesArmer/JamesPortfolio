@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "James Portfolio",
-    description: "A personal porfolio website built using Gtasby JS",
+    description: "A personal porfolio website built using Gatsby JS",
     author: "James Armer",
   },
   plugins: [
