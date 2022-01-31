@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import "../styles/styles.scss";
 
 const Header = () => {
   return (
@@ -7,7 +8,7 @@ const Header = () => {
       <div className="container">
         <div className="inner-header">
           <div className="logo">
-            <Link to="/">ODUNSI</Link>
+            <Link to="/">James Armer</Link>
           </div>
           <div className="navigation">
             <nav>
