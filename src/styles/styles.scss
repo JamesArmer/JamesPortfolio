@@ -198,17 +198,17 @@ header {
     }
     .images {
       width: 50%;
-      height: 1000px;
+      height: 1100px;
       position: relative;
       z-index: 7;
 
       @media (max-width: 1440px) {
-        height: 800px;
+        height: 1000px;
       }
-      .top-right {
+      .bottom-right {
         position: absolute;
         width: 300px;
-        top: 0;
+        bottom: 0;
         right: 0;
         z-index: 4;
 

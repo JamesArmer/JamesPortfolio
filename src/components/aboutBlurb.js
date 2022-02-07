@@ -5,21 +5,27 @@ import Img from "gatsby-image";
 const AboutBlurb = () => {
   const data = useStaticQuery(graphql`
     query {
-      appScreenshot: file(relativePath: { eq: "LiftCalculator/lift-calculator-google-play.png" }) {
+      appScreenshot: file(
+        relativePath: { eq: "LiftCalculator/lift-calculator-google-play.png" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      homeScreenshot: file(relativePath: { eq: "LiftCalculator/home-screenshot.png" }) {
+      homeScreenshot: file(
+        relativePath: { eq: "LiftCalculator/home-screenshot.png" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      percentagesScreenshot: file(relativePath: { eq: "LiftCalculator/percentages-screenshot.png" }) {
+      percentagesScreenshot: file(
+        relativePath: { eq: "LiftCalculator/percentages-screenshot.png" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
@@ -52,20 +58,20 @@ const AboutBlurb = () => {
             </p>
             <div className="btn-row">
               <Link to="/work">View Series</Link>
-            </div>            
+            </div>
           </div>
           <div className="images">
-              <div className="top-right">
-                <Img fluid={data.homeScreenshot.childImageSharp.fluid} />
-              </div>
-              <div className="bottom-left">
-                <Img fluid={data.percentagesScreenshot.childImageSharp.fluid} />
-              </div>
+            <div className="bottom-right">
+              <Img fluid={data.homeScreenshot.childImageSharp.fluid} />
             </div>
+            <div className="top-middle">
+              <Img fluid={data.appScreenshot.childImageSharp.fluid} />
+            </div>
+            <div className="bottom-left">
+              <Img fluid={data.percentagesScreenshot.childImageSharp.fluid} />
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="middle-right">
-      <Img fluid={data.appScreenshot.childImageSharp.fluid} />
       </div>
     </div>
   );
