@@ -3,6 +3,7 @@ import "../styles/styles.scss";
 
 import Header from "../components/header";
 import Hero from "../components/hero";
+import AboutBlurb from "../components/aboutBlurb";
 
 // markup
 const IndexPage = () => {
@@ -10,6 +11,7 @@ const IndexPage = () => {
     <div>
       <Header />
       <Hero />
+      <AboutBlurb />
     </div>
   );
 };

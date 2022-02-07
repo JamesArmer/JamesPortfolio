@@ -5,7 +5,21 @@ import Img from "gatsby-image";
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-      icon: file(relativePath: { eq: "icon.png" }) {
+      azure: file(relativePath: { eq: "azure-logo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      react: file(relativePath: { eq: "react-logo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      android: file(relativePath: { eq: "android-logo.png" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
@@ -13,21 +27,29 @@ const Hero = () => {
         }
       }
     }
+    
   `);
 
   return (
     <div className="banner">
       <div className="container">
         <div className="row">
+        <div className="side-image left">
+            <Img fluid={data.android.childImageSharp.fluid} />
+          </div>
           <div className="main-text">James Armer</div>
           <div className="main-image">
-            <Img fluid={data.icon.childImageSharp.fluid} />
+            <Img fluid={data.azure.childImageSharp.fluid} />
+          </div>
+          <div className="side-image right">
+            <Img fluid={data.react.childImageSharp.fluid} />
           </div>
         </div>
         <div className="scroll">
-            <span>Scroll Down</span>
+          <span>Scroll Down</span>
         </div>
       </div>
+      <div className="fixed-misc">Full Stack Software Developer</div>
     </div>
   );
 };
