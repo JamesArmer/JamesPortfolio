@@ -133,12 +133,15 @@ header {
     }
   }
   .scroll {
-    font-weight: 700;
-    font-size: 0.875rem;
-    letter-spacing: 1.5px;
-    color: $black;
-    position: absolute;
-    bottom: 48px;
+    a {
+      font-weight: 700;
+      font-size: 0.875rem;
+      letter-spacing: 1.5px;
+      color: $black;
+      position: absolute;
+      bottom: 48px;
+      cursor: pointer;
+    }
   }
   .fixed-misc {
     position: fixed;
@@ -167,9 +170,9 @@ header {
   .inner-blurb {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     .content {
       width: 33%;
+      margin-top: 150px;
 
       @media (max-width: 1440px) {
         width: 40%;
@@ -191,6 +194,7 @@ header {
         a {
           font-weight: 700;
           font-size: 0.875rem;
+          color: $black;
           letter-spacing: 1.5px;
           text-decoration: none;
         }
@@ -198,12 +202,12 @@ header {
     }
     .images {
       width: 50%;
-      height: 1100px;
+      height: 800px;
       position: relative;
       z-index: 7;
 
       @media (max-width: 1440px) {
-        height: 1000px;
+        height: 700px;
       }
       .bottom-right {
         position: absolute;
@@ -226,10 +230,12 @@ header {
           height: 200px;
         }
       }
-      .middle-right {
+      .middle {
         position: absolute;
-        width: 400px;
-        margin: auto;
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 150px;
       }
     }
   }

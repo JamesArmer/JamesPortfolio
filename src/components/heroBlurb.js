@@ -2,29 +2,11 @@ import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import Img from "gatsby-image";
 
-const AboutBlurb = () => {
+const HeroBlurb = () => {
   const data = useStaticQuery(graphql`
     query {
-      appScreenshot: file(
-        relativePath: { eq: "LiftCalculator/lift-calculator-google-play.png" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      homeScreenshot: file(
-        relativePath: { eq: "LiftCalculator/home-screenshot.png" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      percentagesScreenshot: file(
-        relativePath: { eq: "LiftCalculator/percentages-screenshot.png" }
+      headshot: file(
+        relativePath: { eq: "headshot.png" }
       ) {
         childImageSharp {
           fluid(maxWidth: 300) {
@@ -52,23 +34,15 @@ const AboutBlurb = () => {
               porttitor ligula sollicitudin. Etiam ex nisi, venenatis ut
               scelerisque eget, feugiat non massa. Mauris malesuada mattis enim,
               ut pulvinar dolor pellentesque sed. Proin aliquet facilisis
-              lectus, quis fermentum diam hendrerit eget. Quisque eu elit purus.
-              Fusce eu tempus neque. Phasellus interdum nunc a purus cursus
-              dictum. Maecenas ultrices dui id ornare ultricies.
+              lectus, quis fermentum diam hendrerit eget.
             </p>
             <div className="btn-row">
-              <Link to="/work">View Series</Link>
+              <Link to="/work" id="blurb">View Projects</Link>
             </div>
           </div>
           <div className="images">
-            <div className="bottom-right">
-              <Img fluid={data.homeScreenshot.childImageSharp.fluid} />
-            </div>
-            <div className="top-middle">
-              <Img fluid={data.appScreenshot.childImageSharp.fluid} />
-            </div>
-            <div className="bottom-left">
-              <Img fluid={data.percentagesScreenshot.childImageSharp.fluid} />
+            <div className="middle">
+              <Img fluid={data.headshot.childImageSharp.fluid} />
             </div>
           </div>
         </div>
@@ -77,4 +51,4 @@ const AboutBlurb = () => {
   );
 };
 
-export default AboutBlurb;
+export default HeroBlurb;

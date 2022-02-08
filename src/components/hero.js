@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
+import { Link } from "react-scroll";
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -27,14 +28,13 @@ const Hero = () => {
         }
       }
     }
-    
   `);
 
   return (
     <div className="banner">
       <div className="container">
         <div className="row">
-        <div className="side-image left">
+          <div className="side-image left">
             <Img fluid={data.android.childImageSharp.fluid} />
           </div>
           <div className="main-text">James Armer</div>
@@ -46,7 +46,16 @@ const Hero = () => {
           </div>
         </div>
         <div className="scroll">
-          <span>Scroll Down</span>
+          <Link
+            activeClass="active"
+            to="blurb"
+            spy={true}
+            smooth={true}
+            offset={-600}
+            duration={800}
+          >
+            Scroll Down
+          </Link>
         </div>
       </div>
       <div className="fixed-misc">Full Stack Software Developer</div>
