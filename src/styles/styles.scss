@@ -42,9 +42,8 @@ header {
   height: 80px;
   width: 100%;
   position: absolute;
-  top: 0px;
+  top: 0;
   z-index: 10;
-
   .inner-header {
     display: flex;
     align-items: center;
@@ -76,7 +75,38 @@ header {
   }
 }
 
-//Banner
+// Footer
+
+footer {
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  font-size: 0.875rem;
+  .inner-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    .copyright {
+      p {
+        color: $black;      
+      }
+    }
+    .socials {
+      a {
+        text-decoration: none;
+        color: $black;
+      }
+    }
+  }
+}
+
+// Hero
+
 .banner {
   display: flex;
   align-items: center;
@@ -161,7 +191,7 @@ header {
   }
 }
 
-//About blurb
+// About blurb
 
 .about-blurb {
   padding: 48px 0;
