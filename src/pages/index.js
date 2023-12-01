@@ -6,7 +6,6 @@ import Footer from "../components/footer";
 import Hero from "../components/hero";
 import HeroBlurb from "../components/heroBlurb";
 
-// markup
 const IndexPage = () => {
   return (
     <div>
