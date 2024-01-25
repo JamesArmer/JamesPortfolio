@@ -1,0 +1,50 @@
+---
+
+---
+
+<nav>
+  <div class="navbar">
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/about-me">About Me</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  nav {
+    color: #fff;
+  }
+
+  a {
+    margin: 0;
+    font-size: 1.25rem;
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-left: 0rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .nav-links a:is(:hover, :focus-within) {
+    color: rgb(var(--accent-medium));
+  }
+</style>

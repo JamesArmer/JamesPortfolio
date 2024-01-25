@@ -1,0 +1,65 @@
+---
+import Navbar from "../components/Navbar.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Layout from "../layouts/Layout.astro";
+
+const projects = await Astro.glob("./projects/*.md");
+---
+
+<Layout title="James Armer | Projects">
+  <main>
+    <h1 class="text-gradient">Projects</h1>
+    <Navbar />
+    <p>
+      My personal projects have always covered the areas software engineering
+      that didn't get to touch in my professional experience.<br /><br />
+      For example I first learned React exclusively through my own projects to fill
+      a hole in my knowledge (and because they internet told me it was better than
+      Angular).<br />
+      This has also led me to learn React Native as a better way of making mobile
+      apps from my Android Java origins.<br /><br />
+      Finally my interest in meta-frameworks and what is at the forefront of web
+      development persuaded to make this website with the AHA stack.
+    </p>
+    <ul role="list" class="project-card-list">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            href={project.url}
+            title={project.frontmatter.title}
+            body={project.frontmatter.description}
+          />
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .project-card-list {
+    padding: 2rem;
+  }
+</style>

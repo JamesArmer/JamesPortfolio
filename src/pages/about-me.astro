@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "../layouts/Layout.astro";
+import profilePic from "../images/profile-pic.jpg";
+import Navbar from "../components/Navbar.astro";
+---
+
+<Layout title="James Armer | About Me">
+  <main>
+    <h1 class="text-gradient">About Me</h1>
+
+    <Navbar />
+
+    <div class="image-container">
+      <Image class="image-center" src={profilePic} alt="Profile picure" />
+    </div>
+  </main>
+
+  <style>
+    main {
+      margin: auto;
+      padding: 1rem;
+      width: 800px;
+      max-width: calc(100% - 2rem);
+      color: white;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    .text-gradient {
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+      background-position: 0%;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-center {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</Layout>
