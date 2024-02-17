@@ -6,7 +6,7 @@ description: "Merging two of my passions by making the CrossFit gym booking app 
 year: 2023
 ---
 
-# Background
+## Background
 
 I go to the gym blah blah blah
 
